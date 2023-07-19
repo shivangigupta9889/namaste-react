@@ -1,31 +1,36 @@
 {
-  "name": "namaste-react-main",
-  "version": "1.0.0",
-  "description": "react react course",
-  "main": "App.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shivangigupta9889/namaste-react.git"
-  },
-  "keywords": [
-    "namaste",
-    "react"
-  ],
-  "author": "Shivangi gupta",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shivangigupta9889/namaste-react/issues"
-  },
-  "homepage": "https://github.com/shivangigupta9889/namaste-react#readme",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "parcel": "^2.9.3",
-    "process": "^0.11.10"
-  }
+    "name": "namaste-react-main",
+    "version": "1.0.0",
+    "description": "react react course",
+    "main": "App.js",
+    "scripts": {
+        "start":"parcel index.html",
+        "build": "parcel build index.html",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shivangigupta9889/namaste-react.git"
+    },
+    "keywords": [
+        "namaste",
+        "react"
+    ],
+    "author": "Shivangi gupta",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shivangigupta9889/namaste-react/issues"
+    },
+    "homepage": "https://github.com/shivangigupta9889/namaste-react#readme",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "parcel": "^2.9.3",
+        "process": "^0.11.10"
+    },
+    "browserslist":[
+        "last 2 versions"
+    ]
 }
