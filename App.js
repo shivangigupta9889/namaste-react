@@ -2,8 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/component/Header";
 import Body from "./src/component/Body";
-// React.createElement =>object=> HTMLelement(render)
+import About from "./src/component/About";
+import { createBrowserRouter ,Outlet,RouterProvider} from "react-router-dom";
+import ContactUs from "./src/component/ContactUs";
+import Error from "./src/component/Error";
+import RestaurantMenu from "./src/component/RestaurantMenu";
 
+
+// React.createElement =>object=> HTMLelement(render)l
 // const heading = React.createElement("h1", { id: "heading" }, "Hello Shivangi ");
 // console.log(heading);
 // jsx => (transpilled before it reaches the javascript engine )and it is done by PARCEL and parcel uses babel
@@ -12,10 +18,19 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
-    </div>
+      <Outlet />
+    </div>      
   );
 };
+const appRouter=createBrowserRouter([
+  {path:"/",element:<AppLayout/>,children:[
+    {path:"/",element:<Body/>},
+    {path:"/about",element:<About/>,},
+    {path:"/contactUs",element:<ContactUs/>,},
+    {path:"/restaurants/:resId",element:<RestaurantMenu/>,},
 
+  ],errorElement:<Error/>},
+  
+])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);

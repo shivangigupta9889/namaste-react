@@ -4,7 +4,7 @@
     "description": "react react course",
     "main": "App.js",
     "scripts": {
-        "start":"parcel index.html",
+        "start": "parcel index.html",
         "build": "parcel build index.html",
         "test": "jest"
     },
@@ -24,13 +24,14 @@
     "homepage": "https://github.com/shivangigupta9889/namaste-react#readme",
     "dependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.14.2"
     },
     "devDependencies": {
         "parcel": "^2.9.3",
         "process": "^0.11.10"
     },
-    "browserslist":[
+    "browserslist": [
         "last 2 versions"
     ]
 }
