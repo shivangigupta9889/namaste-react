@@ -9,7 +9,7 @@ const About=()=>{
                 This is About Page
 
             </h2>
-            <UserClass  name={"shivangi gupta "}    />
+            <UserClass  name={"shivangi gupta "} location={"Banda"}   />
         </div>
     )
 }

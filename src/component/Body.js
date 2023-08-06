@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnelineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -25,6 +26,8 @@ const Body = () => {
       json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
     );
   };
+  const onelineStatus= useOnelineStatus();
+  if(onelineStatus==false) return <h1>You are not connected to the network.</h1>
 
   return listOfRestaurant.length == 0 ? (
     <Shimmer />

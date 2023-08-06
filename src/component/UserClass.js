@@ -6,22 +6,37 @@ constructor(props){
     
     super(props)
     
-   this.state={count:1}
+   this.state={
+    userInfo:{
+        name:"Dummy",
+        location:"Default",
+        avatar_url:"http:Dummy pic"
+
+    },
+   }
+}
+async componentDidMount(){
+    const data = await fetch("https://api.github.com/users/shivangigupta9889");
+    const json = await data.json()
+    this.setState({
+        userInfo:json,}
+    );
+    console.log(json);
+
+}
+componentDidUpdate(){
+    console.log("componnet update called")
+}
+componentWillUnmount(){
+    console.log("componnet will update called")
 }
     render(){
-        const {count}=this.state
-
         return(
             <div className="user-card">
-                <h1>{this.props.name}</h1>
-                <h1>count={count}</h1>
-                <button  onClick={()=>{
-                  this.setState({
-                    count: this.state.count+1
-                  })
+                <img src={this.state.userInfo.avatar_url}></img>
+                <h1>Name:{this.state.userInfo.name}</h1>
+                <h3>Location :{this.state.userInfo.location}</h3>
 
-                }}>CountInc</button>
-                <h3>location :Banda</h3>
                 <h4>Contact:6392833262</h4>
 
             </div>
