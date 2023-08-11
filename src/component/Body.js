@@ -10,7 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const RestaurantCardOffer= withOfferLabel(RestaurantCard);
 
-  console.log(listOfRestaurant)
+  // console.log(listOfRestaurant)
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,10 +22,10 @@ const Body = () => {
     const json = await data.json();
     // console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
     setListOfRestaurant(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   const onelineStatus= useOnelineStatus();
@@ -78,8 +78,8 @@ const Body = () => {
             key={restaurant?.info.id}
             to={"/restaurants/" + restaurant?.info.id}
           >
-            {/* {restaurant.info.aggregatedDiscountInfoV3.header!=null?(<RestaurantCardOffer resData={restaurant.info}/>):(<RestaurantCard resData={restaurant.info}/>)} */}
-            <RestaurantCard resData={restaurant?.info} />
+            {restaurant.info.aggregatedDiscountInfoV3.header?(<RestaurantCardOffer resData={restaurant?.info}/>):(<RestaurantCard resData={restaurant?.info}/>)}
+            {/* <RestaurantCard resData={restaurant?.info} /> */}
           </Link>
         ))}
       </div>

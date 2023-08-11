@@ -1,4 +1,5 @@
 import React from "react"
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component{
 
@@ -36,6 +37,12 @@ componentWillUnmount(){
                 <img src={this.state.userInfo.avatar_url}></img>
                 <h1>Name:{this.state.userInfo.name}</h1>
                 <h3>Location :{this.state.userInfo.location}</h3>
+                <UserContext.Consumer>
+                    {({loggedInUser})=>(
+                        <h3 className=" font-bold text-lg">{loggedInUser}</h3>
+                    )}
+                    
+                </UserContext.Consumer>
 
                 <h4>Contact:6392833262</h4>
 
