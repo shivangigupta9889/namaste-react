@@ -9,6 +9,9 @@ import ContactUs from "./src/component/ContactUs";
 import Error from "./src/component/Error";
 import RestaurantMenu from "./src/component/RestaurantMenu";
 import Shimmer from "./src/component/Shimmer";
+import { Provider } from "react-redux";
+import appStore from "./src/utils/appStore";
+import Cart from "./src/component/Cart";
 
 // import Grocery from "./src/component/Grocery";
 
@@ -27,15 +30,16 @@ const AppLayout = () => {
       name:"Shivangi Gupta ",
     };
       setUserName(data.name)
-    
   },[]);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:userName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
@@ -47,6 +51,7 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <Body /> },
       { path: "/about", element: <About /> },
       { path: "/contactUs", element: <ContactUs /> },
+      { path: "/cart", element: <Cart /> },
       {
         path: "/grocery",
         element: (

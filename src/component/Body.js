@@ -31,6 +31,8 @@ const Body = () => {
   const onelineStatus= useOnelineStatus();
   if(onelineStatus=== false) return <h1>You are not connected to the network.</h1>
 
+
+   
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
